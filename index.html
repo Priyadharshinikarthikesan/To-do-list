@@ -1,0 +1,61 @@
+<div class="bgg">
+
+   <h1>TO-DO LIST</h1>
+   <label class=" title">ENTER TITLE:</label>
+   <input id="inputBox"><br><br>
+   <button id="btn">Add</button>
+
+   <ul id="container">
+      <li>
+         Hello
+         <button onclick="deleteitem(event)">Delete</button>
+      </li>
+   </ul>
+</div>
+
+<script>
+   var inputBox = document.getElementById("inputBox")
+   var btn = document.getElementById("btn")
+   var container = document.getElementById("container")
+
+   btn.addEventListener("click", function () {
+      var li = document.createElement("li")
+      li.innerHTML = inputBox.value + "<button onclick=" + "deleitem(event)" + ">Delete</button>"
+      container.append(li)
+
+   })
+
+   function deleteitem(event) {
+      event.target.parentElement.remove()
+   }
+
+
+</script>
+
+<style>
+   .bgg{
+      background-image: url("bgg3.jpeg");
+      background-size: 100%;
+      height: 100%;
+      text-align: center;
+      
+   }
+    .bgg h1{
+      
+      text-shadow: 10px 10px rgb(147, 143, 143);
+      
+    } 
+    #inputBox{
+      padding:8px ;
+      background-color: rgb(209, 221, 221);
+    }
+    .title{
+      font-weight: bold;
+    }
+    #btn{
+      margin-left: 50px;
+      padding: 5px;
+      width: 50px;
+      background-color:rgb(148, 222, 197);
+    }
+</style>
